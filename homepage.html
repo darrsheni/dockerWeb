@@ -1,0 +1,126 @@
+<title>TASK 7 - WEB APPLICATION FOR DOCKER </title>
+
+<body>
+  <script>
+    function docker() {
+      var xhr = new XMLHttpRequest();
+      var query = document.getElementById("in").value;
+      xhr.open("GET", "http://192.168.1.104/cgi-bin/docker.py?x=" + query, true);
+      xhr.send();
+      xhr.onload = function () {
+        var output = xhr.responseText;
+        document.getElementById("div2").innerHTML = output;
+      }
+    };
+    function Image() {
+      document.getElementById("image1").src = "dockerhero.jpg";
+      document.getElementById("image2").src = "cros-img.png";
+
+    }
+
+    function OutImage() {
+      document.getElementById("image1").src = "print-142507206.jpg";
+      document.getElementById("image2").src = "docker_blue.png";
+    }
+
+  </script>
+
+  <div class="bg-image"></div>
+  <div class="bg-text" onmouseover="Image()" onmouseout="OutImage()">
+
+    <div id="d1" style="font-size:25px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;color: white;
+    -webkit-text-stroke: 1px black;
+    text-shadow: 2px 1px black;"><b>[root@localhost ~]#</b>
+      <input type="text" style="font-size:16pt;width: 450px" id="in" />
+    </div>
+    <button class="button" style="position: absolute; left: 980;top: 20px ;" onclick="docker()">Proceed</button>
+  </div>
+
+  <div class="bg-text" style="font-size: 25px; position: absolute; text-align: center;top: 570px;width: 600px;-webkit-text-stroke: 1px black;
+text-shadow: 2px 1px black;">
+    <p><b>Write any docker command in input box.</b></p>
+  </div>
+
+  <h1 style="font-size:50px;position: absolute;left: 400;top: -20px ;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;  color: whitesmoke;text-align: center;
+-webkit-text-stroke: 3px black;text-shadow: 3px 1px red;"><u>Welcome to Online Docker Portal</u></h1>
+
+  <img id="image1" src="dockerhero.jpg" width="300" height="200" style="position:absolute; left:0px; top:0px;" />
+  <img id="image2" src="cros-img.png" width="300" height="200" style="position:absolute; right:0px; top:0px;" />
+  <br /><br />
+
+  <div id="div1" style="font-size: 50px;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;  color: white;text-align: center;
+-webkit-text-stroke: 3px black;text-shadow: 4px 3px red;">Your Output Is Displayed Below</div>
+  <pre>
+        <div id="div2" style="font-size: 25px"><b>Output</b></div>
+</pre>
+
+
+  <style>
+    .button {
+      display: inline-block;
+      padding: 3px 13px;
+      font-size: 20px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      outline: none;
+      color: white;
+      background-color: red;
+      border: none;
+      border-radius: 25px;
+      box-shadow: 0 9px #999;
+    }
+
+    .button:hover {
+      background-color: green
+    }
+
+    .button:active {
+      background-color: green;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .bg-image {
+      background-image: url("docker-in.jpg");
+      filter: blur(8px);
+      -webkit-filter: blur(8px);
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .bg-text {
+      background-color: rgb(0, 0, 0);
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      padding: 20px;
+      text-align: center;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.4);
+      color: white;
+      font-weight: bold;
+      border: 3px solid #f1f1f1;
+      position: absolute;
+      top: 50%;
+
+    }
+  </style>
+</body>
+
+</html>
